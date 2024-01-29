@@ -1,5 +1,4 @@
 class SpacingTokens {
-  SpacingTokens._();
 
   final double spacing0 = 0;
   final double spacing4 = 4;

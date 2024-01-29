@@ -75,4 +75,6 @@ class TextStyleTokens {
           fontSize: fontSize,
         ),
       );
+
+  TextStyleTokens copyWith({TextDirection? textDirection}) => TextStyleTokens(textDirection: textDirection ?? _textDirection);
 }
