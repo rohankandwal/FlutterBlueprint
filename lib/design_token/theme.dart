@@ -1,4 +1,0 @@
-enum Theme {
-  LIGHT,
-  DART
-}

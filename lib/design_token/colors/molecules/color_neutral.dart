@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blueprint/design_token/colors/atoms/color_atoms.dart';
 
 abstract class ColorNeutral {
   Color get neutral0;
