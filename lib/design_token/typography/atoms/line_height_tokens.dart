@@ -5,7 +5,10 @@ class LineHeightTokens {
   static const double lineHeight20 = 20;
   static const double lineHeight24 = 24;
   static const double lineHeight32 = 32;
+  static const double lineHeight40 = 40;
   static const double lineHeight48 = 48;
+  static const double lineHeight56 = 56;
+  static const double lineHeight72 = 72;
 
   static double? calculateLineHeight({
     required double lineHeight,
