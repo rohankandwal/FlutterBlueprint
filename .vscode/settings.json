@@ -1,0 +1,14 @@
+{
+  "dart.lineLength": 120,
+  "[dart]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.rulers": [120],
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "editor.formatOnSave": true
+}
