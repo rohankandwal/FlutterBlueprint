@@ -12,26 +12,19 @@ class TextStyleTokens {
 
   late final String _fontFamily;
 
-  late final TextStyle heading1_700;
-  late final TextStyle heading2_700;
-  late final TextStyle heading3_700;
-  late final TextStyle heading3_500;
-
-  late final TextStyle paragraph_700;
-  late final TextStyle paragraph_500;
-  late final TextStyle paragraph_400;
-
-  late final TextStyle secondary_700;
-  late final TextStyle secondary_500;
-  late final TextStyle secondary_400;
-
-  late final TextStyle caption_700;
-  late final TextStyle caption_400;
-
-  late final TextStyle buttonText;
-  late final TextStyle pageTitleMobile;
-  late final TextStyle sectionTitleMobile;
-  late final TextStyle sectionSubtitleMobile;
+  late final TextStyle title1_700;
+  late final TextStyle title2_700;
+  late final TextStyle title3_800;
+  late final TextStyle headline_800;
+  late final TextStyle subHeadline_700;
+  late final TextStyle body_400;
+  late final TextStyle body_700;
+  late final TextStyle bodySmall_400;
+  late final TextStyle bodySmall_700;
+  late final TextStyle caption_600;
+  late final TextStyle buttonLarge_600;
+  late final TextStyle buttonMedium_700;
+  late final TextStyle buttonSmall_700;
 
   TextStyleTokens({
     required TextDirection textDirection,
@@ -41,20 +34,85 @@ class TextStyleTokens {
   }
 
   void _initDefaultTextStyles({required String fontFamily}) {
-    heading1_700 = _getTextStyle(
-      debugLabel: 'heading1_700',
-      fontSize: FontSizeTokens.fontSize40,
+    title1_700 = _getTextStyle(
+      debugLabel: 'title1_700',
+      fontSize: FontSizeTokens.fontSize60,
       fontWeight: FontWeightTokens.fontWeight700,
-      lineHeight: LineHeightTokens.lineHeight48,
+      lineHeight: LineHeightTokens.lineHeight72,
     );
-    heading2_700 = _getTextStyle(
-      debugLabel: 'heading2_700',
-      fontSize: FontSizeTokens.fontSize28,
+    title2_700 = _getTextStyle(
+      debugLabel: 'title2_700',
+      fontSize: FontSizeTokens.fontSize48,
+      fontWeight: FontWeightTokens.fontWeight700,
+      lineHeight: LineHeightTokens.lineHeight56,
+    );
+    title3_800 = _getTextStyle(
+      debugLabel: 'title3_800',
+      fontSize: FontSizeTokens.fontSize34,
+      fontWeight: FontWeightTokens.fontWeight800,
+      lineHeight: LineHeightTokens.lineHeight40,
+    );
+    headline_800 = _getTextStyle(
+      debugLabel: 'headline_800',
+      fontSize: FontSizeTokens.fontSize24,
+      fontWeight: FontWeightTokens.fontWeight800,
+      lineHeight: LineHeightTokens.lineHeight32,
+    );
+    subHeadline_700 = _getTextStyle(
+      debugLabel: 'subHeadline_700',
+      fontSize: FontSizeTokens.fontSize18,
       fontWeight: FontWeightTokens.fontWeight700,
       lineHeight: LineHeightTokens.lineHeight32,
     );
+    body_400 = _getTextStyle(
+      debugLabel: 'body_400',
+      fontSize: FontSizeTokens.fontSize16,
+      fontWeight: FontWeightTokens.fontWeight400,
+      lineHeight: LineHeightTokens.lineHeight24,
+    );
+    body_700 = _getTextStyle(
+      debugLabel: 'body_700',
+      fontSize: FontSizeTokens.fontSize16,
+      fontWeight: FontWeightTokens.fontWeight700,
+      lineHeight: LineHeightTokens.lineHeight24,
+    );
+    bodySmall_400 = _getTextStyle(
+      debugLabel: 'bodySmall_400',
+      fontSize: FontSizeTokens.fontSize14,
+      fontWeight: FontWeightTokens.fontWeight400,
+      lineHeight: LineHeightTokens.lineHeight24,
+    );
+    bodySmall_700 = _getTextStyle(
+      debugLabel: 'bodySmall_700',
+      fontSize: FontSizeTokens.fontSize14,
+      fontWeight: FontWeightTokens.fontWeight700,
+      lineHeight: LineHeightTokens.lineHeight24,
+    );
+    caption_600 = _getTextStyle(
+      debugLabel: 'caption_600',
+      fontSize: FontSizeTokens.fontSize12,
+      fontWeight: FontWeightTokens.fontWeight600,
+      lineHeight: LineHeightTokens.lineHeight16,
+    );
+    buttonLarge_600 = _getTextStyle(
+      debugLabel: 'buttonLarge_600',
+      fontSize: FontSizeTokens.fontSize16,
+      fontWeight: FontWeightTokens.fontWeight600,
+      lineHeight: LineHeightTokens.lineHeight24,
+    );
+    buttonMedium_700 = _getTextStyle(
+      debugLabel: 'buttonMedium_700',
+      fontSize: FontSizeTokens.fontSize14,
+      fontWeight: FontWeightTokens.fontWeight700,
+      lineHeight: LineHeightTokens.lineHeight16,
+    );
+    buttonSmall_700 = _getTextStyle(
+      debugLabel: 'buttonSmall_700',
+      fontSize: FontSizeTokens.fontSize12,
+      fontWeight: FontWeightTokens.fontWeight700,
+      lineHeight: LineHeightTokens.lineHeight16,
+    );
 
-    // todo do rest based on UI
   }
 
   TextStyle _getTextStyle({
@@ -76,5 +134,6 @@ class TextStyleTokens {
         ),
       );
 
-  TextStyleTokens copyWith({TextDirection? textDirection}) => TextStyleTokens(textDirection: textDirection ?? _textDirection);
+  TextStyleTokens copyWith({TextDirection? textDirection}) =>
+      TextStyleTokens(textDirection: textDirection ?? _textDirection);
 }
