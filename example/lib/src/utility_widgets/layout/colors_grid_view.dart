@@ -33,6 +33,7 @@ class ColorsGridView extends StatelessWidget {
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: colors.length,
+      padding: EdgeInsets.symmetric(vertical: theme.spacings.spacing8),
       itemBuilder: (context, index) {
         return Column(
           children: [
@@ -44,12 +45,13 @@ class ColorsGridView extends StatelessWidget {
                     color: theme.colors.neutral.neutral20,
                     width: theme.borderWidth.borderWidthSmall,
                   ),
+                  borderRadius: BorderRadius.circular(theme.borderRadius.borderRadiusMedium),
                 ),
               ),
             ),
             Text(
-              colorTitles[index],
-              style: theme.textStyle.secondary_700,
+              colorTitles[index].substring(6, colorTitles[index].length - 1),
+              style: theme.textStyle.caption_600.copyWith(color: theme.colors.neutral.neutral30),
             ),
           ],
         );

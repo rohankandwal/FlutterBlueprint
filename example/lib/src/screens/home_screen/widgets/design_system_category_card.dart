@@ -39,7 +39,7 @@ class DesignSystemCategoryCard extends StatelessWidget {
             child: SizedBox(
               height: _kCardHeight,
               child: Center(
-                child: Text(title, style: theme.textStyle.heading2_700),
+                child: Text(title, style: theme.textStyle.title2_700),
               ),
             ),
           ),

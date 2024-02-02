@@ -15,7 +15,9 @@ class LabelText extends StatelessWidget {
 
     return Text(
       title,
-      style: theme.textStyle.secondary_400.copyWith(color: theme.colors.neutral.neutral50),
+      style: theme.textStyle.bodySmall_400.copyWith(
+        color: theme.colors.neutral.neutral50,
+      ),
     );
   }
 }
