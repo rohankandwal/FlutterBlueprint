@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 enum BluePrintMaterialState {
@@ -22,8 +20,7 @@ class BluePrintMaterialStateColor {
 
   BluePrintMaterialStateColor resolveMaterialState({
     required Set<MaterialState> states,
-    required Map<BluePrintMaterialState, BluePrintMaterialStateColor>
-        materialStateColorMap,
+    required Map<BluePrintMaterialState, BluePrintMaterialStateColor> materialStateColorMap,
   }) {
     if (states.contains(MaterialState.disabled)) {
       return materialStateColorMap[BluePrintMaterialState.disabled]!;

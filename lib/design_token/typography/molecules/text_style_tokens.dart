@@ -7,8 +7,6 @@ import 'package:flutter_blueprint/design_token/typography/atoms/line_height_toke
 import 'package:flutter_blueprint/util/flutter_blueprint_constants.dart';
 
 class TextStyleTokens {
-  TextStyleTokens._();
-
   late final TextDirection _textDirection;
   late final AvailableFonts? _ltr;
   late final AvailableFonts? _rtl;
