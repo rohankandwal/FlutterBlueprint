@@ -12,7 +12,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
     interaction: ColorInteraction(
       hover: projects.brandColors.hoverColor,
       main: projects.brandColors.primary,
-      pressed: projects.brandColors.hoverColor,
+      pressed: projects.brandColors.pressedColor,
     ),
     neutral: projects.colorNeutral,
     messaging: projects.colorMessaging,
