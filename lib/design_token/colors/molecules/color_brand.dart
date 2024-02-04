@@ -18,4 +18,6 @@ class ColorBrand {
       secondary: Color.lerp(secondary, other?.secondary, t)!,
     );
   }
+
+  List<Color> get values => [main, error, secondary];
 }

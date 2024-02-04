@@ -18,4 +18,6 @@ class ColorInteraction {
       pressed: Color.lerp(pressed, other?.main, t)!,
     );
   }
+
+  List<Color> get values => [main, hover, pressed];
 }
