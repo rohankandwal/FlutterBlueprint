@@ -19,7 +19,7 @@ on:
 
 jobs:
   initialize-flutter:
-    - uses: ./.github/workflows/flutter_init.yaml
+    uses: ./.github/workflows/flutter_init.yaml
 
   run-flutter-analyze:
     steps:
