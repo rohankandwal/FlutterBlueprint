@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_prefix.dart';
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_suffix.dart';
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_utility.dart';
+import 'package:flutter_blueprint/components/common/blueprint_popup_menu_button.dart';
 import 'package:flutter_blueprint/design_token/flutter_blueprint_theme_extension.dart';
 
 class BluePrintCenterAlignedAppBar extends StatelessWidget
@@ -38,23 +39,17 @@ class BluePrintCenterAlignedAppBar extends StatelessWidget
           ? null
           : showActionButtonAsPopupMenu
               ? [
-                  PopupMenuButton<BluePrintAppBarSuffixData>(
-                    onSelected: (suffixData) {
-                      suffixData.onPressed?.call();
+                  BluePrintPopupMenuButton<BluePrintAppBarSuffixData>(
+                    items: suffixes,
+                    theme: theme,
+                    builder: (suffixData) {
+                      return BlueprintAppBarSuffix(
+                        suffixData: suffixData,
+                        theme: theme,
+                        shownAsPopupMenu: showActionButtonAsPopupMenu,
+                      );
                     },
-                    itemBuilder: (BuildContext context) {
-                      return suffixes
-                          .map((BluePrintAppBarSuffixData suffixData) {
-                        return PopupMenuItem<BluePrintAppBarSuffixData>(
-                          value: suffixData,
-                          child: BlueprintAppBarSuffix(
-                            suffixData: suffixData,
-                            theme: theme,
-                            shownAsPopupMenu: showActionButtonAsPopupMenu,
-                          ),
-                        );
-                      }).toList();
-                    },
+                    onTap: (suffixData) {},
                   ),
                 ]
               : suffixes

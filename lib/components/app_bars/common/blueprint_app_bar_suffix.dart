@@ -32,7 +32,11 @@ class BlueprintAppBarSuffix extends StatelessWidget {
               SizedBox(
                 width: theme.spacings.spacing10,
               ),
-            if (suffixData.title != null) Text(suffixData.title!),
+            if (suffixData.title != null)
+              Text(
+                suffixData.title!,
+                style: theme.textStyle.bodySmall_400,
+              ),
           ],
         ),
       ),

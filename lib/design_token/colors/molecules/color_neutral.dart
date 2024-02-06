@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class ColorNeutral {
+  Color transparent = Colors.transparent;
+
   Color get neutral0;
   Color get neutral10;
   Color get neutral20;
