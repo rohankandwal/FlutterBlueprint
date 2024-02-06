@@ -18,29 +18,11 @@ on:
       - '.vscode/'
 
 jobs:
+  initialize-flutter:
+    - uses: ./.github/workflows/flutter_init.yaml
+
   run-flutter-analyze:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v2
-        with:
-          channel: stable
-          version: 3.16.9
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Cache Flutter dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.pub-cache
-          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-flutter-  
-
       - name: Analyze project source
         run: dart analyze
 
