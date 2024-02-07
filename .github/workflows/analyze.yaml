@@ -37,7 +37,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ~/.pub-cache
+            ~/bin/cache
           key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             ${{ runner.os }}-flutter- 
