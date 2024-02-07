@@ -1,0 +1,49 @@
+name: learn-github-actions
+run-name: Run flutter analyze
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+    branches:
+      - 'develop'
+
+    paths-ignore:
+      - '**.md'
+      - 'doc/**'
+      - '.git/'
+      - '.vscode/'
+
+jobs:
+
+  run-flutter-analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v2
+        with:
+          channel: stable
+          version: 3.16.9
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pub-cache ~/bin/cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter- 
+
+      - name: Analyze project source
+        run: dart analyze
+
+      - name: Run tests
+        run: flutter test
