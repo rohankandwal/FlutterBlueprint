@@ -17,7 +17,6 @@ class BluePrintAppBarPrefix extends StatelessWidget {
     final icon = prefixData.prefixType == BluePrintAppBarPrefixType.back
         ? Icons.arrow_back_outlined
         : Icons.close_outlined;
-    // final materialStateColorMap = getText
     return IconButton(
       highlightColor: theme.colors.interaction.pressed,
       focusColor: theme.colors.interaction.hover,
