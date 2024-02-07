@@ -1,11 +1,23 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/design_token/typography/atoms/available_fonts.dart';
 
 class FontFamilyTokens {
   FontFamilyTokens._();
 
-  static const String ltr = 'Roboto';
-  static const String rtl = 'NotoSans';
+  static const AvailableFonts ltr = AvailableFonts.roboto;
+  static const AvailableFonts rtl = AvailableFonts.notoSans;
 
-  static String getFontFamily({required TextDirection textDirection}) =>
-      textDirection == TextDirection.ltr ? ltr : rtl;
+  static TextStyle getFontFamily({
+    required TextDirection textDirection,
+    required AvailableFonts? ltr,
+    required AvailableFonts? rtl,
+  }) {
+    final TextStyle textStyle;
+    if (textDirection == TextDirection.ltr) {
+      textStyle = ltr ?? FontFamilyTokens.ltr.fontName();
+    } else {
+      textStyle = rtl ?? FontFamilyTokens.rtl.fontName();
+    }
+    return textStyle;
+  }
 }
