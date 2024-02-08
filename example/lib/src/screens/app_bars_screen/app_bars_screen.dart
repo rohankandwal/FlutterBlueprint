@@ -67,6 +67,53 @@ class AppBarsScreen extends StatelessWidget {
                 )
               ],
             ),
+            const LabelText(title: "Start Aligned Appbar with suffix action"),
+            BluePrintStartAlignedAppBar(
+              title: "title",
+              theme: theme,
+              prefixData: BluePrintAppBarPrefixData(
+                prefixType: BluePrintAppBarPrefixType.back,
+                onPressed: Navigator.of(context).pop,
+              ),
+              suffixes: [
+                BluePrintAppBarSuffixData(
+                  iconData: Icons.person,
+                  title: "My Profile",
+                  onPressed: () {},
+                ),
+                BluePrintAppBarSuffixData(
+                  iconData: Icons.logout,
+                  title: null,
+                  onPressed: () {},
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const LabelText(
+                title: "Start Aligned Appbar with suffix action in PopUp Menu"),
+            BluePrintStartAlignedAppBar(
+              title: "title",
+              theme: theme,
+              showActionButtonAsPopupMenu: true,
+              prefixData: BluePrintAppBarPrefixData(
+                prefixType: BluePrintAppBarPrefixType.back,
+                onPressed: Navigator.of(context).pop,
+              ),
+              suffixes: [
+                BluePrintAppBarSuffixData(
+                  iconData: Icons.person,
+                  title: "My Profile",
+                  onPressed: () {},
+                ),
+                BluePrintAppBarSuffixData(
+                  iconData: Icons.logout,
+                  title: null,
+                  onPressed: () {},
+                )
+              ],
+            ),
           ],
         ),
       ),
