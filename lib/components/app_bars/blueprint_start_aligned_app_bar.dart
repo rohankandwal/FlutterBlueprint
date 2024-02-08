@@ -3,14 +3,14 @@ import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_u
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_base_app_bar.dart';
 import 'package:flutter_blueprint/design_token/flutter_blueprint_theme_extension.dart';
 
-class BluePrintCenterAlignedAppBar extends StatelessWidget {
+class BluePrintStartAlignedAppBar extends StatelessWidget {
   final String title;
   final FlutterBluePrintThemeExtension theme;
   final List<BluePrintAppBarSuffixData> suffixes;
   final BluePrintAppBarPrefixData? prefixData;
   final bool showActionButtonAsPopupMenu;
 
-  const BluePrintCenterAlignedAppBar({
+  const BluePrintStartAlignedAppBar({
     required this.title,
     required this.theme,
     this.prefixData,
@@ -28,7 +28,7 @@ class BluePrintCenterAlignedAppBar extends StatelessWidget {
       suffixes: suffixes,
       prefixData: prefixData,
       showActionButtonAsPopupMenu: showActionButtonAsPopupMenu,
-      centerTitle: true,
+      centerTitle: false,
     );
   }
 }
