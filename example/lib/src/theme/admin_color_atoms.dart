@@ -145,5 +145,8 @@ class AdminColorAtoms extends ColorAtoms {
   Color get surface => const Color(0xFFE8E8EA);
 
   @override
-  Color get hoverColor => AdminColorAtoms.blue600;
+  Color get hoverColor => AdminColorAtoms.blue1100;
+
+  @override
+  Color get pressedColor => AdminColorAtoms.blue1000;
 }
