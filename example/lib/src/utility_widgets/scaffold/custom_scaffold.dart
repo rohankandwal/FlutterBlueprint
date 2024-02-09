@@ -22,7 +22,8 @@ class CustomScaffold extends StatelessWidget {
     final theme = context.theme;
 
     return Scaffold(
-      backgroundColor: alternativeBackgroundColor ?? theme.colors.neutral.neutral0,
+      backgroundColor:
+          alternativeBackgroundColor ?? theme.colors.neutral.neutral0,
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: !closable,
