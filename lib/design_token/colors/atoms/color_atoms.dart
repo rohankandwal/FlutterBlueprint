@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 abstract class ColorAtoms {
-
   Color get primary;
   Color get onPrimary;
   Color get secondary;
@@ -13,5 +12,5 @@ abstract class ColorAtoms {
   Color get surface;
   Color get onSurface;
   Color get hoverColor;
-
+  Color get pressedColor;
 }

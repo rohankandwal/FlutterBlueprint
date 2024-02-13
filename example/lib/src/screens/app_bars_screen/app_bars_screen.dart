@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
-import 'package:flutter_blueprint_example/src/screens/app_bars_screen/app_bars_screen.dart';
-import 'package:flutter_blueprint_example/src/screens/colors_screen/colors_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/large_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/medium_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/small_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/start_aligned_app_bar_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/home_screen/widgets/design_system_category_card.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_scaffold.dart';
 
-/// This should hold all the design system categories with corresponding screens.
+import 'center_aligned_app_bar_screen.dart';
+
 const _kDesignSystemCategories = [
-  // DesignSystemCategoryCard(title: 'Components', child: ComponentsScreen()),
-  // DesignSystemCategoryCard(title: 'Typography', child: TypographyScreen()),
-  DesignSystemCategoryCard(title: 'Colors', child: ColorsScreen()),
-  DesignSystemCategoryCard(title: 'AppBars', child: AppBarsScreen()),
+  DesignSystemCategoryCard(
+      title: 'Center Aligned AppBar', child: CenterAlignedAppBarScreen()),
+  DesignSystemCategoryCard(
+      title: 'Start Aligned AppBar', child: StartAlignedAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Small AppBar', child: SmallAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Medium AppBar', child: MediumAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Large AppBar', child: LargeAppBarScreen()),
 ];
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class AppBarsScreen extends StatelessWidget {
+  const AppBarsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

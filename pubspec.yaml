@@ -1,6 +1,7 @@
 name: flutter_blueprint
 description: "Blueprint containing UI library for Flutter"
 version: 0.0.1
+publish_to: none
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
@@ -20,10 +21,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   # For theme
   flex_color_scheme: ^7.3.1
+  # localization
   intl: ^0.19.0
+  # Fonts
   google_fonts: ^6.1.0
 #  admin_template:
 #    path: admin_template
+  # Utility for collections
+  collection: ^1.18.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
