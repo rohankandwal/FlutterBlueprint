@@ -111,8 +111,100 @@ class AppBarsScreen extends StatelessWidget {
                   iconData: Icons.logout,
                   title: null,
                   onPressed: () {},
-                )
+                ),
               ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const LabelText(
+                title:
+                    "Small Appbar with start title with suffix action *required Slivers"),
+            SizedBox(
+              height: 400,
+              child: CustomScrollView(
+                slivers: [
+                  BlueprintSmallAppBar(
+                    title: "title",
+                    theme: theme,
+                    centerTitle: true,
+                    showActionButtonAsPopupMenu: false,
+                    prefixData: BluePrintAppBarPrefixData(
+                      prefixType: BluePrintAppBarPrefixType.back,
+                      onPressed: Navigator.of(context).pop,
+                    ),
+                    suffixes: [
+                      BluePrintAppBarSuffixData(
+                        iconData: Icons.person,
+                        title: "My Profile",
+                        onPressed: () {},
+                      ),
+                      BluePrintAppBarSuffixData(
+                        iconData: Icons.logout,
+                        title: null,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 50,
+                      color: theme.colors.brand.main,
+                    ),
+                  ),
+                  SliverFillRemaining(
+                    child: Container(
+                      color: theme.colors.brand.secondary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const LabelText(
+                title:
+                    "Small Appbar with center title and PopUp Menu *required Slivers"),
+            SizedBox(
+              height: 400,
+              child: CustomScrollView(
+                slivers: [
+                  BlueprintSmallAppBar(
+                    title: "title",
+                    theme: theme,
+                    centerTitle: true,
+                    showActionButtonAsPopupMenu: true,
+                    prefixData: BluePrintAppBarPrefixData(
+                      prefixType: BluePrintAppBarPrefixType.back,
+                      onPressed: Navigator.of(context).pop,
+                    ),
+                    suffixes: [
+                      BluePrintAppBarSuffixData(
+                        iconData: Icons.person,
+                        title: "My Profile",
+                        onPressed: () {},
+                      ),
+                      BluePrintAppBarSuffixData(
+                        iconData: Icons.logout,
+                        title: null,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 50,
+                      color: theme.colors.brand.main,
+                    ),
+                  ),
+                  SliverFillRemaining(
+                    child: Container(
+                      color: theme.colors.brand.secondary,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
