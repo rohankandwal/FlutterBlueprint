@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_utility.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/large_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/medium_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/small_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/app_bars_screen/start_aligned_app_bar_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/home_screen/widgets/design_system_category_card.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_scaffold.dart';
-import 'package:flutter_blueprint_example/src/utility_widgets/text/label_text.dart';
+
+import 'center_aligned_app_bar_screen.dart';
+
+const _kDesignSystemCategories = [
+  DesignSystemCategoryCard(
+      title: 'Center Aligned AppBar', child: CenterAlignedAppBarScreen()),
+  DesignSystemCategoryCard(
+      title: 'Start Aligned AppBar', child: StartAlignedAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Small AppBar', child: SmallAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Medium AppBar', child: MediumAppBarScreen()),
+  DesignSystemCategoryCard(title: 'Large AppBar', child: LargeAppBarScreen()),
+];
 
 class AppBarsScreen extends StatelessWidget {
   const AppBarsScreen({super.key});
@@ -10,384 +25,21 @@ class AppBarsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
+    final cardSpacing = theme.spacings.spacing16;
+
     return CustomScaffold(
-      title: "Appbars",
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      title: 'Home',
+      showThemeConfigActionItem: true,
+      body: ListView.builder(
+        padding: EdgeInsetsDirectional.only(
+          bottom: theme.spacings.spacing40,
+          top: theme.spacings.spacing24,
+        ),
+        itemCount: _kDesignSystemCategories.length,
+        itemBuilder: (context, index) => Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(title: "Center Aligned Appbar with suffix action"),
-            BluePrintCenterAlignedAppBar(
-              title: "title",
-              theme: theme,
-              prefixData: BluePrintAppBarPrefixData(
-                prefixType: BluePrintAppBarPrefixType.back,
-                onPressed: Navigator.of(context).pop,
-              ),
-              suffixes: [
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.person,
-                  title: "My Profile",
-                  onPressed: () {},
-                ),
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.logout,
-                  title: null,
-                  onPressed: () {},
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Center Aligned Appbar with suffix action in PopUp Menu"),
-            BluePrintCenterAlignedAppBar(
-              title: "title",
-              theme: theme,
-              showActionButtonAsPopupMenu: true,
-              prefixData: BluePrintAppBarPrefixData(
-                prefixType: BluePrintAppBarPrefixType.back,
-                onPressed: Navigator.of(context).pop,
-              ),
-              suffixes: [
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.person,
-                  title: "My Profile",
-                  onPressed: () {},
-                ),
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.logout,
-                  title: null,
-                  onPressed: () {},
-                )
-              ],
-            ),
-            const LabelText(title: "Start Aligned Appbar with suffix action"),
-            BluePrintStartAlignedAppBar(
-              title: "title",
-              theme: theme,
-              prefixData: BluePrintAppBarPrefixData(
-                prefixType: BluePrintAppBarPrefixType.back,
-                onPressed: Navigator.of(context).pop,
-              ),
-              suffixes: [
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.person,
-                  title: "My Profile",
-                  onPressed: () {},
-                ),
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.logout,
-                  title: null,
-                  onPressed: () {},
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title: "Start Aligned Appbar with suffix action in PopUp Menu"),
-            BluePrintStartAlignedAppBar(
-              title: "title",
-              theme: theme,
-              showActionButtonAsPopupMenu: true,
-              prefixData: BluePrintAppBarPrefixData(
-                prefixType: BluePrintAppBarPrefixType.back,
-                onPressed: Navigator.of(context).pop,
-              ),
-              suffixes: [
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.person,
-                  title: "My Profile",
-                  onPressed: () {},
-                ),
-                BluePrintAppBarSuffixData(
-                  iconData: Icons.logout,
-                  title: null,
-                  onPressed: () {},
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Small Appbar with start title with suffix action *required Slivers"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintSmallAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: true,
-                    showActionButtonAsPopupMenu: false,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Small Appbar with center title and PopUp Menu *required Slivers"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintSmallAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: true,
-                    showActionButtonAsPopupMenu: true,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Large Appbar with center title and suffix action *required CustomScrollView"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintLargeAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: true,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Large Appbar with start title and PopUp Menu *required CustomScrollView"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintLargeAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: false,
-                    showActionButtonAsPopupMenu: true,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Medium Appbar with center title and suffix action *required CustomScrollView"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintMediumAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: true,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const LabelText(
-                title:
-                    "Medium Appbar with start title and PopUp Menu *required CustomScrollView"),
-            SizedBox(
-              height: 400,
-              child: CustomScrollView(
-                slivers: [
-                  BlueprintMediumAppBar(
-                    title: "title",
-                    theme: theme,
-                    centerTitle: false,
-                    showActionButtonAsPopupMenu: true,
-                    prefixData: BluePrintAppBarPrefixData(
-                      prefixType: BluePrintAppBarPrefixType.back,
-                      onPressed: Navigator.of(context).pop,
-                    ),
-                    suffixes: [
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.person,
-                        title: "My Profile",
-                        onPressed: () {},
-                      ),
-                      BluePrintAppBarSuffixData(
-                        iconData: Icons.logout,
-                        title: null,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      height: 50,
-                      color: theme.colors.brand.main,
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    child: Container(
-                      color: theme.colors.brand.secondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            _kDesignSystemCategories[index],
+            SizedBox(height: cardSpacing),
           ],
         ),
       ),
