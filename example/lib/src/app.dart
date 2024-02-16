@@ -4,6 +4,8 @@ import 'package:flutter_blueprint/flutter_blueprint.dart';
 import 'package:flutter_blueprint_example/src/screens/home_screen/home_screen.dart';
 import 'package:flutter_blueprint_example/src/theme/admin/dark/admin_dark_project_branding.dart';
 import 'package:flutter_blueprint_example/src/theme/admin/light/admin_light_project_branding.dart';
+import 'package:flutter_blueprint_example/src/theme/sunset/dark/sunset_dark_project_branding.dart';
+import 'package:flutter_blueprint_example/src/theme/sunset/light/sunset_project_light_branding.dart';
 import 'package:flutter_blueprint_example/src/theme/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +39,11 @@ class FlutterBluePrintExample extends StatelessWidget {
   ProjectBranding _getProjectBranding(ThemeNotifier theme) {
     if (theme.getSelectedTheme() == Themes.adminLight) {
       return AdminProjectLightBranding();
+    } else if (theme.getSelectedTheme() == Themes.adminDark) {
+      return AdminProjectDarkBranding();
+    } else if (theme.getSelectedTheme() == Themes.sunsetDark) {
+      return SunsetProjectDarkBranding();
     }
-    return AdminProjectDarkBranding();
+    return SunsetProjectLightBranding();
   }
 }

@@ -17,6 +17,7 @@ class BlueprintBaseAppBar extends StatelessWidget
   final bool centerTitle;
   final bool automaticallyImplyLeading;
   final double elevation;
+  final Color? backgroundColor;
 
   const BlueprintBaseAppBar({
     super.key,
@@ -29,18 +30,19 @@ class BlueprintBaseAppBar extends StatelessWidget
     this.automaticallyImplyLeading = false,
     this.titleColor,
     this.elevation = 4,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
     return AppBar(
-      backgroundColor: theme.colors.brand.surface,
+      backgroundColor: backgroundColor ?? theme.colors.brand.primary,
       elevation: elevation,
       title: Text(
         title,
         style: theme.textStyle.body_700.copyWith(
-          color: titleColor,
+          color: titleColor ?? theme.colors.brand.onPrimary,
         ),
       ),
       centerTitle: centerTitle,

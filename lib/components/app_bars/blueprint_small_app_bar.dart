@@ -14,6 +14,7 @@ class BlueprintSmallAppBar extends StatelessWidget {
   final bool showActionButtonAsPopupMenu;
   final bool centerTitle;
   final bool pinned;
+  final Color? actionIconColor;
 
   const BlueprintSmallAppBar({
     required this.title,
@@ -23,6 +24,7 @@ class BlueprintSmallAppBar extends StatelessWidget {
     this.showActionButtonAsPopupMenu = false,
     this.centerTitle = false,
     this.pinned = true,
+    this.actionIconColor,
     super.key,
   });
 
@@ -46,6 +48,7 @@ class BlueprintSmallAppBar extends StatelessWidget {
                   BluePrintPopupMenuButton<BluePrintAppBarSuffixData>(
                     items: suffixes,
                     theme: theme,
+                    iconColor: actionIconColor,
                     builder: (suffixData) {
                       return BlueprintAppBarSuffix(
                         suffixData: suffixData,

@@ -13,7 +13,9 @@ class ThemeNotifier extends ChangeNotifier {
 
 enum Themes {
   adminLight("Admin Light"),
-  adminDark("Admin Dark");
+  adminDark("Admin Dark"),
+  sunsetLight("Sunset Light"),
+  sunsetDark("Sunset Dark");
 
   const Themes(this.themeName);
 

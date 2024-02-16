@@ -8,12 +8,14 @@ class BluePrintPopupMenuButton<T> extends StatelessWidget {
   final FlutterBluePrintThemeExtension theme;
   final Widget Function(T) builder;
   final Function(T) onTap;
+  final Color? iconColor;
 
   const BluePrintPopupMenuButton({
     required this.items,
     required this.theme,
     required this.builder,
     required this.onTap,
+    this.iconColor,
     super.key,
   });
 
@@ -27,7 +29,7 @@ class BluePrintPopupMenuButton<T> extends StatelessWidget {
       ),
       child: PopupMenuButton<T>(
         color: theme.colors.interaction.main,
-        iconColor: theme.colors.brand.onSurface,
+        iconColor: iconColor ?? theme.colors.brand.onPrimary,
         onSelected: onTap,
         itemBuilder: (BuildContext context) {
           return items.map((T suffixData) {

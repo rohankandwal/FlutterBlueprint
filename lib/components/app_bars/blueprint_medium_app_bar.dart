@@ -13,6 +13,7 @@ class BlueprintMediumAppBar extends StatelessWidget {
   final BluePrintAppBarPrefixData? prefixData;
   final bool showActionButtonAsPopupMenu;
   final bool centerTitle;
+  final Color? actionIconColor;
 
   const BlueprintMediumAppBar({
     required this.title,
@@ -21,6 +22,7 @@ class BlueprintMediumAppBar extends StatelessWidget {
     this.suffixes = const [],
     this.showActionButtonAsPopupMenu = false,
     this.centerTitle = false,
+    this.actionIconColor,
     super.key,
   });
 
@@ -43,6 +45,7 @@ class BlueprintMediumAppBar extends StatelessWidget {
                   BluePrintPopupMenuButton<BluePrintAppBarSuffixData>(
                     items: suffixes,
                     theme: theme,
+                    iconColor: actionIconColor,
                     builder: (suffixData) {
                       return BlueprintAppBarSuffix(
                         suffixData: suffixData,

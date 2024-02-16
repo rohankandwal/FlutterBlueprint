@@ -10,6 +10,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
   return ColorTokens(
     brand: ColorBrand(
       primary: colorScheme.primary,
+      onPrimary: colorScheme.onPrimary,
       secondary: colorScheme.secondary,
       tertiary: colorScheme.tertiary,
       error: colorScheme.error,
@@ -17,6 +18,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       surface: colorScheme.surface,
       cardBackgroundColor: colorScheme.surface,
       onSurface: colorScheme.onSurface,
+      surfaceContainer: colorScheme.surfaceVariant,
     ),
     interaction: ColorInteraction(
       hover: colorScheme.primary.withOpacity(0.2),

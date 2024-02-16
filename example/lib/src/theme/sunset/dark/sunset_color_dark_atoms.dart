@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_blueprint/design_token/colors/atoms/color_atoms.dart';
 
-class AdminColorDarkAtoms extends ColorAtoms {
+class SunsetColorDarkAtoms extends ColorAtoms {
   static const gray100 = Color(0xFF0F0D15);
   static const gray200 = Color(0xFF1D1929);
   static const gray300 = Color(0xFF34303E);
@@ -85,7 +85,43 @@ class AdminColorDarkAtoms extends ColorAtoms {
   static const black = Color(0xFF000000);
 
   @override
-  Color get primary => const Color(0xFF5E7691);
+  Color get primary => const Color(0xFFEDA85E);
+
+  @override
+  Color? get primaryContainer => const Color(0xFFB86914);
+
+  @override
+  Color? get onPrimary => const Color(0xFF14110B);
+
+  @override
+  Color? get onPrimaryContainer => const Color(0xFFFCF0E2);
+
+  @override
+  Color? get secondary => const Color(0xFFDDAB88);
+
+  @override
+  Color? get onSecondary => const Color(0xFF14110E);
+
+  @override
+  Color? get secondaryContainer => const Color(0xFFBF7D4E);
+
+  @override
+  Color? get tertiary => const Color(0xFFD28F60);
+
+  @override
+  Color? get error => const Color(0xFFFFB4AB);
+
+  @override
+  Color? get onError => const Color(0xFF690005);
+
+  @override
+  Color? get errorContainer => const Color(0xFF93000A);
+
+  @override
+  Color? get background => const Color(0xFF1C1814);
+
+  @override
+  Color? get surface => const Color(0xFF1C1814);
 
   @override
   Brightness get brightness => Brightness.dark;
