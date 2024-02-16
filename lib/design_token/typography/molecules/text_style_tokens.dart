@@ -25,14 +25,17 @@ class TextStyleTokens {
   late final TextStyle buttonLarge_600;
   late final TextStyle buttonMedium_700;
   late final TextStyle buttonSmall_700;
+  late final Color _textColor;
 
   TextStyleTokens({
     required final TextDirection textDirection,
     required final AvailableFonts? ltr,
     required final AvailableFonts? rtl,
+    required final Color textColor,
   })  : _textDirection = textDirection,
         _ltr = ltr,
-        _rtl = rtl {
+        _rtl = rtl,
+        _textColor = textColor {
     _textStyle = FontFamilyTokens.getFontFamily(
       textDirection: textDirection,
       ltr: ltr,
@@ -130,6 +133,7 @@ class TextStyleTokens {
   }) =>
       _textStyle.copyWith(
         debugLabel: debugLabel,
+        color: _textColor,
         package: FlutterBlueprintConstants.packageName,
         fontWeight: fontWeight,
         fontSize: fontSize,
@@ -144,10 +148,12 @@ class TextStyleTokens {
     final TextDirection? textDirection,
     final AvailableFonts? ltr,
     final AvailableFonts? rtl,
+    final Color? textColor,
   }) =>
       TextStyleTokens(
         textDirection: textDirection ?? _textDirection,
         rtl: rtl ?? _rtl,
         ltr: ltr ?? _ltr,
+        textColor: textColor ?? _textColor,
       );
 }

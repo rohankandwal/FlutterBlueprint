@@ -50,7 +50,7 @@ class MediumAppBarScreen extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: Container(
                       height: 50,
-                      color: theme.colors.brand.main,
+                      color: theme.colors.brand.primary,
                     ),
                   ),
                   SliverFillRemaining(
@@ -96,7 +96,7 @@ class MediumAppBarScreen extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: Container(
                       height: 50,
-                      color: theme.colors.brand.main,
+                      color: theme.colors.brand.primary,
                     ),
                   ),
                   SliverFillRemaining(

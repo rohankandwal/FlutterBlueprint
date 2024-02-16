@@ -21,12 +21,13 @@ class BluePrintPopupMenuButton<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        highlightColor: theme.colors.interaction.pressed,
-        focusColor: theme.colors.interaction.hover,
+        highlightColor: theme.colors.interaction.hover,
         hoverColor: theme.colors.interaction.hover,
+        splashColor: theme.colors.interaction.splash,
       ),
       child: PopupMenuButton<T>(
         color: theme.colors.interaction.main,
+        iconColor: theme.colors.brand.onSurface,
         onSelected: onTap,
         itemBuilder: (BuildContext context) {
           return items.map((T suffixData) {

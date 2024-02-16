@@ -25,6 +25,8 @@ dependencies:
   intl: ^0.19.0
   # Fonts
   google_fonts: ^6.1.0
+#  dynamic_color: ^1.6.9
+  material_color_utilities:
 #  admin_template:
 #    path: admin_template
   # Utility for collections

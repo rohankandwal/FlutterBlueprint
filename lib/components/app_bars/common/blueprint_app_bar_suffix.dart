@@ -27,7 +27,11 @@ class BlueprintAppBarSuffix extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (suffixData.iconData != null) Icon(suffixData.iconData),
+            if (suffixData.iconData != null)
+              Icon(
+                suffixData.iconData,
+                color: suffixData.color ?? theme.colors.brand.onSurface,
+              ),
             if (suffixData.title != null && suffixData.iconData != null)
               SizedBox(
                 width: theme.spacings.spacing10,
