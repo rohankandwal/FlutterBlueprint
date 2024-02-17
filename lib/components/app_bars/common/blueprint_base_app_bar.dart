@@ -48,7 +48,7 @@ class BlueprintBaseAppBar extends StatelessWidget
       centerTitle: centerTitle,
       automaticallyImplyLeading: automaticallyImplyLeading,
       iconTheme: IconThemeData(
-        color: theme.colors.brand.onSurface,
+        color: theme.colors.brand.surface,
       ),
       leading: prefixData == null
           ? null
