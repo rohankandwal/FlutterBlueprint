@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 
 class ElevationToken {
@@ -8,6 +7,7 @@ class ElevationToken {
   final double spreadRadius;
   final double opacity;
   final Color color;
+  final double elevation;
 
   ElevationToken({
     required this.xOffset,
@@ -16,6 +16,7 @@ class ElevationToken {
     required this.opacity,
     required this.color,
     required this.spreadRadius,
+    required this.elevation,
   });
 
   BoxShadow getBoxShadow() => BoxShadow(

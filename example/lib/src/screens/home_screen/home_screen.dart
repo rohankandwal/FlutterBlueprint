@@ -14,7 +14,12 @@ const _kDesignSystemCategories = [
 ];
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String title;
+
+  const HomeScreen({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class HomeScreen extends StatelessWidget {
     final cardSpacing = theme.spacings.spacing16;
 
     return CustomScaffold(
-      title: 'Home',
+      title: 'Theme : $title',
       showThemeConfigActionItem: true,
       body: ListView.builder(
         padding: EdgeInsetsDirectional.only(

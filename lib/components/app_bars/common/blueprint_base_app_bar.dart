@@ -16,7 +16,7 @@ class BlueprintBaseAppBar extends StatelessWidget
   final bool showActionButtonAsPopupMenu;
   final bool centerTitle;
   final bool automaticallyImplyLeading;
-  final double elevation;
+  final double? elevation;
   final Color? backgroundColor;
 
   const BlueprintBaseAppBar({
@@ -29,7 +29,7 @@ class BlueprintBaseAppBar extends StatelessWidget
     required this.centerTitle,
     this.automaticallyImplyLeading = false,
     this.titleColor,
-    this.elevation = 4,
+    this.elevation,
     this.backgroundColor,
   });
 
@@ -38,7 +38,7 @@ class BlueprintBaseAppBar extends StatelessWidget
     final theme = context.theme;
     return AppBar(
       backgroundColor: backgroundColor ?? theme.colors.brand.primary,
-      elevation: elevation,
+      elevation: elevation ?? theme.elevations.elevationMedium.elevation,
       title: Text(
         title,
         style: theme.textStyle.body_700.copyWith(

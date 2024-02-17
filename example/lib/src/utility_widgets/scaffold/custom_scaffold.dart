@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_utility.dart';
+import 'package:flutter_blueprint/components/theme_notifier.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
-import 'package:flutter_blueprint_example/src/theme/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
 class CustomScaffold extends StatelessWidget {
@@ -29,15 +29,15 @@ class CustomScaffold extends StatelessWidget {
       return Scaffold(
         backgroundColor: theme.colors.brand.surface,
         appBar: BluePrintCenterAlignedAppBar(
-          title: "title",
+          title: title,
           theme: theme,
           showActionButtonAsPopupMenu: true,
           automaticallyImplyLeading: !closable,
-          suffixes: Themes.values
+          suffixes: themeNotifier.themes
               .map(
                 (e) => BluePrintAppBarSuffixData(
                   iconData: null,
-                  title: e.themeName,
+                  title: e,
                   onPressed: () => themeNotifier.setTheme(e),
                 ),
               )
