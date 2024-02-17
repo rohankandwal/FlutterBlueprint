@@ -21,7 +21,6 @@ class BluePrintAppBarPrefix extends StatelessWidget {
       highlightColor: theme.colors.interaction.pressed,
       focusColor: theme.colors.interaction.hover,
       hoverColor: theme.colors.interaction.hover,
-      color: theme.colors.neutral.neutral0,
       onPressed: prefixData.onPressed,
       icon: Icon(
         icon,

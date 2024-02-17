@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_utility.dart';
+import 'package:flutter_blueprint/components/theme_notifier.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
+import 'package:provider/provider.dart';
 
 class CustomScaffold extends StatelessWidget {
   final String title;
@@ -21,23 +24,27 @@ class CustomScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
 
-    return Scaffold(
-      backgroundColor: alternativeBackgroundColor ?? theme.colors.neutral.neutral0,
-      appBar: AppBar(
-        elevation: 0,
-        automaticallyImplyLeading: !closable,
-        title: Text(
-          title,
-          style: theme.textStyle.subHeadline_700.copyWith(
-            color: theme.colors.neutral.neutral90,
-          ),
+    return Consumer<ThemeNotifier>(
+        builder: (context, ThemeNotifier themeNotifier, child) {
+      return Scaffold(
+        backgroundColor: theme.colors.brand.surface,
+        appBar: BluePrintCenterAlignedAppBar(
+          title: title,
+          theme: theme,
+          showActionButtonAsPopupMenu: true,
+          automaticallyImplyLeading: !closable,
+          suffixes: themeNotifier.themes
+              .map(
+                (e) => BluePrintAppBarSuffixData(
+                  iconData: null,
+                  title: e,
+                  onPressed: () => themeNotifier.setTheme(e),
+                ),
+              )
+              .toList(),
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        actionsIconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: theme.colors.neutral.neutral10,
-        actions: const [],
-      ),
-      body: body,
-    );
+        body: body,
+      );
+    });
   }
 }

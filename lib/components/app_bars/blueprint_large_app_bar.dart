@@ -13,6 +13,9 @@ class BlueprintLargeAppBar extends StatelessWidget {
   final BluePrintAppBarPrefixData? prefixData;
   final bool showActionButtonAsPopupMenu;
   final bool centerTitle;
+  final Color? actionIconColor;
+  final Color? backgroundColor;
+  final Color? titleColor;
 
   const BlueprintLargeAppBar({
     required this.title,
@@ -21,18 +24,27 @@ class BlueprintLargeAppBar extends StatelessWidget {
     this.suffixes = const [],
     this.showActionButtonAsPopupMenu = false,
     this.centerTitle = false,
+    this.actionIconColor,
+    this.titleColor,
+    this.backgroundColor,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar.large(
+      backgroundColor: backgroundColor ?? theme.colors.brand.primary,
       title: Text(
         title,
-        style: theme.textStyle.body_700,
+        style: theme.textStyle.body_700.copyWith(
+          color: titleColor ?? theme.colors.brand.onPrimary,
+        ),
       ),
       automaticallyImplyLeading: false,
       centerTitle: centerTitle,
+      iconTheme: IconThemeData(
+        color: theme.colors.brand.surface,
+      ),
       leading: prefixData == null
           ? null
           : BluePrintAppBarPrefix(prefixData: prefixData!, theme: theme),
@@ -43,6 +55,7 @@ class BlueprintLargeAppBar extends StatelessWidget {
                   BluePrintPopupMenuButton<BluePrintAppBarSuffixData>(
                     items: suffixes,
                     theme: theme,
+                    iconColor: actionIconColor,
                     builder: (suffixData) {
                       return BlueprintAppBarSuffix(
                         suffixData: suffixData,

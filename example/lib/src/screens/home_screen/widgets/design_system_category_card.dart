@@ -18,15 +18,16 @@ class DesignSystemCategoryCard extends StatelessWidget {
     final theme = context.theme;
 
     return Container(
-      margin: EdgeInsetsDirectional.symmetric(horizontal: theme.spacings.spacing16),
+      margin:
+          EdgeInsetsDirectional.symmetric(horizontal: theme.spacings.spacing16),
       decoration: BoxDecoration(
         borderRadius: _getBorderRadius(context),
-        boxShadow: [theme.elevations.elevationLow.getBoxShadow()],
+        boxShadow: [theme.elevations.elevationMedium.getBoxShadow()],
       ),
       child: Card(
         margin: EdgeInsetsDirectional.zero,
         clipBehavior: Clip.antiAlias,
-        color: theme.colors.neutral.neutral100,
+        color: theme.colors.brand.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: _getBorderRadius(context)),
         child: InkWell(
@@ -49,6 +50,7 @@ class DesignSystemCategoryCard extends StatelessWidget {
   }
 }
 
-BorderRadiusGeometry _getBorderRadius(BuildContext context) => BorderRadius.circular(
+BorderRadiusGeometry _getBorderRadius(BuildContext context) =>
+    BorderRadius.circular(
       context.theme.borderRadius.borderRadiusMedium,
     );

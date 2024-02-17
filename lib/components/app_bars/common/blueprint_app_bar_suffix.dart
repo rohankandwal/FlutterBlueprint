@@ -16,6 +16,12 @@ class BlueprintAppBarSuffix extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color colorSuffixData;
+    if (shownAsPopupMenu) {
+      colorSuffixData = suffixData.color ?? theme.colors.brand.onSurface;
+    } else {
+      colorSuffixData = theme.colors.brand.surface;
+    }
     return InkWell(
       onTap: shownAsPopupMenu ? null : suffixData.onPressed,
       child: ConstrainedBox(
@@ -27,7 +33,11 @@ class BlueprintAppBarSuffix extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (suffixData.iconData != null) Icon(suffixData.iconData),
+            if (suffixData.iconData != null)
+              Icon(
+                suffixData.iconData,
+                color: colorSuffixData,
+              ),
             if (suffixData.title != null && suffixData.iconData != null)
               SizedBox(
                 width: theme.spacings.spacing10,
@@ -35,7 +45,9 @@ class BlueprintAppBarSuffix extends StatelessWidget {
             if (suffixData.title != null)
               Text(
                 suffixData.title!,
-                style: theme.textStyle.bodySmall_400,
+                style: theme.textStyle.bodySmall_400.copyWith(
+                  color: colorSuffixData,
+                ),
               ),
           ],
         ),

@@ -14,6 +14,9 @@ class BlueprintSmallAppBar extends StatelessWidget {
   final bool showActionButtonAsPopupMenu;
   final bool centerTitle;
   final bool pinned;
+  final Color? actionIconColor;
+  final Color? backgroundColor;
+  final Color? titleColor;
 
   const BlueprintSmallAppBar({
     required this.title,
@@ -23,19 +26,28 @@ class BlueprintSmallAppBar extends StatelessWidget {
     this.showActionButtonAsPopupMenu = false,
     this.centerTitle = false,
     this.pinned = true,
+    this.actionIconColor,
+    this.backgroundColor,
+    this.titleColor,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: backgroundColor ?? theme.colors.brand.primary,
       title: Text(
         title,
-        style: theme.textStyle.body_700,
+        style: theme.textStyle.body_700.copyWith(
+          color: titleColor ?? theme.colors.brand.onPrimary,
+        ),
       ),
       automaticallyImplyLeading: false,
       pinned: pinned,
       centerTitle: centerTitle,
+      iconTheme: IconThemeData(
+        color: theme.colors.brand.surface,
+      ),
       leading: prefixData == null
           ? null
           : BluePrintAppBarPrefix(prefixData: prefixData!, theme: theme),
@@ -46,6 +58,7 @@ class BlueprintSmallAppBar extends StatelessWidget {
                   BluePrintPopupMenuButton<BluePrintAppBarSuffixData>(
                     items: suffixes,
                     theme: theme,
+                    iconColor: actionIconColor,
                     builder: (suffixData) {
                       return BlueprintAppBarSuffix(
                         suffixData: suffixData,

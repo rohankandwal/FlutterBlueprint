@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_blueprint/design_token/colors/atoms/color_atoms.dart';
 
-class AdminColorAtoms extends ColorAtoms {
+class AdminColorDarkAtoms extends ColorAtoms {
   static const gray100 = Color(0xFF0F0D15);
   static const gray200 = Color(0xFF1D1929);
   static const gray300 = Color(0xFF34303E);
@@ -85,68 +85,8 @@ class AdminColorAtoms extends ColorAtoms {
   static const black = Color(0xFF000000);
 
   @override
-
-  /// Represents the color of the overall background of the app.
-  /// Applied to the background of the entire app, providing a consistent base color.
-  Color get background => const Color(0xFFFFFFFF);
+  Color get primary => const Color(0xFF5E7691);
 
   @override
-
-  /// Represents the color associated with errors or alerts.
-  /// Used for highlighting error messages or indicators.
-  Color get error => const Color(0xFFF42829);
-
-  @override
-
-  /// The color used for text and icons on top of the background color.
-  /// Ensures text and icons are readable when placed on the background color.
-  Color get onBackground => const Color(0xFF000000);
-
-  @override
-
-  /// The color used for text and icons on top of the error color.
-  /// Ensures text and icons are readable when placed on the error color.
-  Color get onError => const Color(0xFFFFFFFF);
-
-  @override
-
-  /// The color used for text and icons on top of the primary color.
-  /// Ensures text and icons are readable when placed on the primary color.
-  Color get onPrimary => const Color(0xFFFFFFFF);
-
-  @override
-
-  /// The color used for text and icons on top of the secondary color.
-  /// Ensures text and icons are readable when placed on the secondary color.
-  Color get onSecondary => const Color(0xFFFFFFFF);
-
-  @override
-
-  /// The color used for text and icons on top of the surface color.
-  /// Ensures text and icons are readable when placed on surfaces like cards.
-  Color get onSurface => const Color(0xFF000000);
-
-  @override
-
-  /// Represents the main color of the application.
-  /// Used for prominent UI elements such as app bars, buttons, and other key components.
-  Color get primary => const Color(0xFF003CFF);
-
-  @override
-
-  /// Used for accenting certain parts of the UI, complementing the primary color.
-  /// Applied to accent buttons, icons, or other elements that need to stand out
-  Color get secondary => const Color(0xFFFA0082);
-
-  @override
-
-  /// Represents the background color of major UI elements like cards.
-  /// Applied to surfaces such as cards, dialogs, and other container-like components.
-  Color get surface => const Color(0xFFE8E8EA);
-
-  @override
-  Color get hoverColor => AdminColorAtoms.blue1100;
-
-  @override
-  Color get pressedColor => AdminColorAtoms.blue1000;
+  Brightness get brightness => Brightness.dark;
 }

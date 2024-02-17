@@ -42,6 +42,7 @@ class FlutterBluePrintThemeExtension
           textDirection: textDirection,
           ltr: ltr,
           rtl: rtl,
+          textColor: colors.brand.onSurface,
         );
   }
 
@@ -60,6 +61,7 @@ class FlutterBluePrintThemeExtension
       textDirection: textDirection,
       ltr: ltr,
       rtl: rtl,
+      textColor: colors.brand.onSurface,
     );
     elevations = ElevationTokens(opacityTokens: opacities, colorTokens: colors);
   }

@@ -13,6 +13,7 @@ class ElevationTokens {
         spreadRadius: 0,
         opacity: _opacityTokens.opacity30,
         color: _colorTokens.neutral.neutral50,
+        elevation: 0,
       );
 
   ElevationToken get elevationMedium => ElevationToken(
@@ -22,6 +23,7 @@ class ElevationTokens {
         spreadRadius: 0,
         opacity: _opacityTokens.opacity24,
         color: _colorTokens.neutral.neutral50,
+        elevation: 4,
       );
 
   ElevationToken get elevationHigh => ElevationToken(
@@ -31,6 +33,7 @@ class ElevationTokens {
         spreadRadius: 0,
         opacity: _opacityTokens.opacity24,
         color: _colorTokens.neutral.neutral50,
+        elevation: 8,
       );
 
   ElevationTokens({
