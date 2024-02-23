@@ -14,6 +14,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       secondary: colorScheme.secondary,
       tertiary: colorScheme.tertiary,
       error: colorScheme.error,
+      onError: colorScheme.onError,
       background: colorScheme.background,
       surface: colorScheme.surface,
       cardBackgroundColor: colorScheme.surface,
