@@ -19,3 +19,29 @@ extension TextDirectionContextExtension on BuildContext {
     return TextDirection.ltr;
   }
 }
+
+extension IntlFormatting on num {
+  String toFormattingNumbers() {
+    final number = this;
+    if (number.abs() >= 1000000000000) {
+      return '${removeDecimalIfInteger(number / 1000000000000)}T';
+    } else if (number.abs() >= 1000000000) {
+      return '${removeDecimalIfInteger(number / 1000000000)}B';
+    } else if (number.abs() >= 1000000) {
+      return '${removeDecimalIfInteger(number / 1000000)}M';
+    } else if (number.abs() >= 1000) {
+      return '${removeDecimalIfInteger(number / 1000)}K';
+    } else {
+      return number.toString();
+    }
+  }
+
+  String removeDecimalIfInteger(num number) {
+    String str = number.toString();
+    if (str.endsWith('.0')) {
+      return str.substring(0, str.length - 2);
+    } else {
+      return str;
+    }
+  }
+}

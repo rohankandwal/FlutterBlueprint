@@ -4,5 +4,5 @@ class BorderRadiusTokens {
   final double borderRadiusSmall = 4;
   final double borderRadiusMedium = 8;
   final double borderRadiusLarge = 12;
-  final double borderRadiusExtraLarge = 12;
+  final double borderRadiusExtraLarge = 16;
 }

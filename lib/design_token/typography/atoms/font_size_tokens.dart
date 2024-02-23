@@ -1,6 +1,8 @@
 class FontSizeTokens {
   FontSizeTokens._();
 
+  static const double fontSize8 = 8;
+  static const double fontSize10 = 10;
   static const double fontSize12 = 12;
   static const double fontSize14 = 14;
   static const double fontSize16 = 16;
