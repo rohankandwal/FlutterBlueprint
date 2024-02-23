@@ -8,10 +8,11 @@ class ColorBrand {
   final Color error;
   final Color onError;
   final Color surface;
-  final Color cardBackgroundColor;
-  final Color background;
   final Color onSurface;
   final Color surfaceContainer;
+  final Color background;
+  final Color cardBackgroundColor;
+  final Color outline;
 
   ColorBrand({
     required this.primary,
@@ -21,6 +22,7 @@ class ColorBrand {
     required this.error,
     required this.onError,
     required this.surface,
+    required this.outline,
     required this.cardBackgroundColor,
     required this.background,
     required this.onSurface,
@@ -36,6 +38,7 @@ class ColorBrand {
       error: Color.lerp(error, other?.error, t)!,
       onError: Color.lerp(onError, other?.onError, t)!,
       surface: Color.lerp(surface, other?.surface, t)!,
+      outline: Color.lerp(outline, other?.outline, t)!,
       cardBackgroundColor:
           Color.lerp(cardBackgroundColor, other?.cardBackgroundColor, t)!,
       background: Color.lerp(background, other?.background, t)!,
@@ -53,6 +56,7 @@ class ColorBrand {
         error,
         onError,
         surface,
+        outline,
         cardBackgroundColor,
         background,
         onSurface,
