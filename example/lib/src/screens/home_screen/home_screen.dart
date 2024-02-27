@@ -3,6 +3,7 @@ import 'package:flutter_blueprint/flutter_blueprint.dart';
 import 'package:flutter_blueprint_example/src/screens/app_bars_screen/app_bars_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/badge_screen/badge_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/bottom_sheet_screen/bottom_sheet_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/button_screen/button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/colors_screen/colors_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/divider_screen/divider_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/home_screen/widgets/design_system_category_card.dart';
@@ -10,13 +11,12 @@ import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_sc
 
 /// This should hold all the design system categories with corresponding screens.
 const _kDesignSystemCategories = [
-  // DesignSystemCategoryCard(title: 'Components', child: ComponentsScreen()),
-  // DesignSystemCategoryCard(title: 'Typography', child: TypographyScreen()),
   DesignSystemCategoryCard(title: 'Colors', child: ColorsScreen()),
   DesignSystemCategoryCard(title: 'AppBars', child: AppBarsScreen()),
   DesignSystemCategoryCard(title: 'Badges', child: BadgeScreen()),
   DesignSystemCategoryCard(title: 'Dividers', child: DividerScreen()),
   DesignSystemCategoryCard(title: 'Bottom Sheet', child: BottomSheetScreen()),
+  DesignSystemCategoryCard(title: 'Buttons', child: ButtonScreen()),
 ];
 
 class HomeScreen extends StatelessWidget {

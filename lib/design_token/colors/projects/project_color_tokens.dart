@@ -23,7 +23,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       outline: colorScheme.outline,
     ),
     interaction: ColorInteraction(
-      hover: colorScheme.primary.withOpacity(0.2),
+      hover: colorScheme.primary.withOpacity(0.8),
       main: colorScheme.surface,
       pressed: colorScheme.primary.withOpacity(0.6),
       splash: colorScheme.primary.withOpacity(0.2),
