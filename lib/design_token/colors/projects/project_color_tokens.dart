@@ -20,6 +20,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       cardBackgroundColor: colorScheme.surface,
       onSurface: colorScheme.onSurface,
       surfaceContainer: colorScheme.surfaceVariant,
+      outline: colorScheme.outline,
     ),
     interaction: ColorInteraction(
       hover: colorScheme.primary.withOpacity(0.2),
