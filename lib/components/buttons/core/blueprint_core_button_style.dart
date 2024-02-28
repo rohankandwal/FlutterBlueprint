@@ -4,18 +4,22 @@ import 'package:flutter_blueprint/components/buttons/filled_button/blueprint_fil
 import 'package:flutter_blueprint/design_token/flutter_blueprint_theme_extension.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/font_size_tokens.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/line_height_tokens.dart';
+import 'package:flutter_blueprint/types/material_state.dart';
 
 class BluePrintCoreButtonStyle extends ButtonStyle {
   final bool hasLeftIcon;
   final bool hasRightIcon;
   final FlutterBluePrintThemeExtension theme;
+  final Map<BluePrintMaterialState, double> Function() getButtonElevationMap;
 
+  // todo: The shadow isn't rounded
   BluePrintCoreButtonStyle({
     required this.theme,
     required this.hasLeftIcon,
     required this.hasRightIcon,
     required super.backgroundColor,
     required super.foregroundColor,
+    required this.getButtonElevationMap,
     super.side,
     final BluePrintCoreButtonRippleType splashRipple =
         BluePrintCoreButtonRippleType.ripple,
@@ -42,8 +46,7 @@ class BluePrintCoreButtonStyle extends ButtonStyle {
           ),
           elevation: MaterialStateProperty.resolveWith(
             (states) => resolveElevationMaterialState(
-                materialStateColorMap: getButtonElevationMap(theme),
-                states: states),
+                materialStateColorMap: getButtonElevationMap(), states: states),
           ),
           splashFactory: splashRipple.splashFactory,
           shadowColor: MaterialStatePropertyAll(

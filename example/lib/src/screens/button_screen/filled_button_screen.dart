@@ -3,15 +3,15 @@ import 'package:flutter_blueprint/flutter_blueprint.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/layout/scrollable_row_widget.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_scaffold.dart';
 
-class ContainedButtonScreen extends StatelessWidget {
-  const ContainedButtonScreen({super.key});
+class FilledButtonScreen extends StatelessWidget {
+  const FilledButtonScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
 
     return CustomScaffold(
-      title: "Center Appbars",
+      title: "Filled Buttons",
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
           vertical: theme.spacings.spacing8,

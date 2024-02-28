@@ -1,5 +1,6 @@
 class OpacityTokens {
   final double opacity0 = 0;
+  final double opacity5 = 0.05;
   final double opacity10 = 0.10;
   final double opacity15 = 0.15;
   final double opacity20 = 0.20;

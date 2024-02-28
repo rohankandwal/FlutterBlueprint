@@ -6,6 +6,7 @@ enum BluePrintMaterialState {
   hovered,
   pressed,
   main,
+  focused,
 }
 
 class BluePrintMaterialStateColor {
