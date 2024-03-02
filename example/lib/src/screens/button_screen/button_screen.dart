@@ -4,6 +4,7 @@ import 'package:flutter_blueprint_example/src/screens/button_screen/elevated_but
 import 'package:flutter_blueprint_example/src/screens/button_screen/filled_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/button_screen/outlined_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/button_screen/text_button_screen.dart';
+import 'package:flutter_blueprint_example/src/screens/button_screen/tonal_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/home_screen/widgets/design_system_category_card.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_scaffold.dart';
 
@@ -23,6 +24,10 @@ const _kDesignSystemCategories = [
   DesignSystemCategoryCard(
     title: 'Elevated Button',
     child: ElevatedButtonScreen(),
+  ),
+  DesignSystemCategoryCard(
+    title: 'Tonal Button',
+    child: TonalButtonScreen(),
   ),
 ];
 

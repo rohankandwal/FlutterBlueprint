@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/components/buttons/core/blueprint_core_button_ripple_type.dart';
-import 'package:flutter_blueprint/components/buttons/filled_button/blueprint_filled_button_style.dart';
 import 'package:flutter_blueprint/design_token/flutter_blueprint_theme_extension.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/font_size_tokens.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/line_height_tokens.dart';

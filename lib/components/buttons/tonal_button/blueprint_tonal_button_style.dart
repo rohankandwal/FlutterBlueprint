@@ -2,23 +2,22 @@ import 'package:flutter_blueprint/design_token/flutter_blueprint_theme_extension
 import 'package:flutter_blueprint/types/material_state.dart';
 
 Map<BluePrintMaterialState, BluePrintMaterialStateColor>
-    getFilledButtonMaterialStateColorMap(
-            FlutterBluePrintThemeExtension theme) =>
+    getTonalButtonMaterialStateColorMap(FlutterBluePrintThemeExtension theme) =>
         {
           BluePrintMaterialState.main: BluePrintMaterialStateColor(
-            backgroundColor: theme.colors.brand.primary,
-            borderColor: theme.colors.brand.primary,
-            foregroundColor: theme.colors.brand.onPrimary,
-          ),
-          BluePrintMaterialState.pressed: BluePrintMaterialStateColor(
-            backgroundColor: theme.colors.interaction.pressed,
-            borderColor: theme.colors.interaction.pressed,
-            foregroundColor: theme.colors.brand.onPrimary,
+            backgroundColor: theme.colors.brand.secondaryContainer,
+            borderColor: theme.colors.neutral.transparent,
+            foregroundColor: theme.colors.brand.onSecondaryContainer,
           ),
           BluePrintMaterialState.hovered: BluePrintMaterialStateColor(
-            backgroundColor: theme.colors.interaction.hover,
-            borderColor: theme.colors.interaction.hover,
-            foregroundColor: theme.colors.brand.onPrimary,
+            backgroundColor: theme.colors.brand.secondaryContainer,
+            borderColor: theme.colors.neutral.transparent,
+            foregroundColor: theme.colors.brand.onSecondaryContainer,
+          ),
+          BluePrintMaterialState.pressed: BluePrintMaterialStateColor(
+            backgroundColor: theme.colors.brand.secondaryContainer,
+            borderColor: theme.colors.neutral.transparent,
+            foregroundColor: theme.colors.brand.onSecondaryContainer,
           ),
           BluePrintMaterialState.disabled: BluePrintMaterialStateColor(
             backgroundColor: theme.colors.interaction.disabledColor,
@@ -28,12 +27,12 @@ Map<BluePrintMaterialState, BluePrintMaterialStateColor>
           ),
           BluePrintMaterialState.focused: BluePrintMaterialStateColor(
             backgroundColor: theme.colors.interaction.hover,
-            borderColor: theme.colors.brand.primary,
-            foregroundColor: theme.colors.brand.onPrimary,
+            borderColor: theme.colors.neutral.transparent,
+            foregroundColor: theme.colors.brand.onSurface,
           ),
         };
 
-Map<BluePrintMaterialState, double> getFilledButtonElevationMap(
+Map<BluePrintMaterialState, double> getTonalButtonElevationMap(
         FlutterBluePrintThemeExtension theme) =>
     {
       BluePrintMaterialState.main: theme.elevations.elevationMedium.elevation,

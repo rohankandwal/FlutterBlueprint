@@ -12,6 +12,8 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       primary: colorScheme.primary,
       onPrimary: colorScheme.onPrimary,
       secondary: colorScheme.secondary,
+      secondaryContainer: colorScheme.secondaryContainer,
+      onSecondaryContainer: colorScheme.onSecondaryContainer,
       tertiary: colorScheme.tertiary,
       error: colorScheme.error,
       onError: colorScheme.onError,

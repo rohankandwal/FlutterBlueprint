@@ -32,6 +32,8 @@ BluePrintMaterialStateColor resolveMaterialState({
     return materialStateColorMap[BluePrintMaterialState.pressed]!;
   } else if (states.contains(MaterialState.hovered)) {
     return materialStateColorMap[BluePrintMaterialState.hovered]!;
+  } else if (states.contains(MaterialState.focused)) {
+    return materialStateColorMap[BluePrintMaterialState.focused]!;
   }
   return materialStateColorMap[BluePrintMaterialState.main]!;
 }
@@ -59,3 +61,19 @@ Map<BluePrintMaterialState, BluePrintMaterialStateColor>
             foregroundColor: theme.colors.neutral.neutral40,
           ),
         };
+
+double resolveElevationMaterialState({
+  required Set<MaterialState> states,
+  required Map<BluePrintMaterialState, double> materialStateColorMap,
+}) {
+  if (states.contains(MaterialState.disabled)) {
+    return materialStateColorMap[BluePrintMaterialState.disabled]!;
+  } else if (states.contains(MaterialState.pressed)) {
+    return materialStateColorMap[BluePrintMaterialState.pressed]!;
+  } else if (states.contains(MaterialState.hovered)) {
+    return materialStateColorMap[BluePrintMaterialState.hovered]!;
+  } else if (states.contains(MaterialState.focused)) {
+    return materialStateColorMap[BluePrintMaterialState.focused]!;
+  }
+  return materialStateColorMap[BluePrintMaterialState.main]!;
+}
