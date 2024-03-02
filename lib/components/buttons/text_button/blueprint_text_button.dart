@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/components/buttons/core/blueprint_core_button.dart';
 import 'package:flutter_blueprint/components/buttons/core/blueprint_core_button_style.dart';
-import 'package:flutter_blueprint/components/buttons/filled_button/blueprint_filled_button_style.dart';
+import 'package:flutter_blueprint/components/buttons/text_button/blueprint_text_button_style.dart';
 import 'package:flutter_blueprint/types/material_state.dart';
 import 'package:flutter_blueprint/util/extensions.dart';
 
-class BluePrintFilledButton extends StatelessWidget {
+class BluePrintTextButton extends StatelessWidget {
   final String label;
   final IconData? leftIcon;
   final IconData? rightIcon;
   final Function()? onPressed;
 
-  const BluePrintFilledButton({
+  const BluePrintTextButton({
     required this.label,
     this.onPressed,
     this.leftIcon,
@@ -22,9 +22,9 @@ class BluePrintFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
-    final materialStateMap = getFilledButtonMaterialStateColorMap(theme);
+    final materialStateMap = getTextButtonMaterialStateColorMap(theme);
 
-    return ElevatedButton(
+    return TextButton(
       onPressed: onPressed,
       style: BluePrintCoreButtonStyle(
         theme: theme,
@@ -40,7 +40,7 @@ class BluePrintFilledButton extends StatelessWidget {
                   states: states, materialStateColorMap: materialStateMap)
               .foregroundColor,
         ),
-        getButtonElevationMap: () => getFilledButtonElevationMap(theme),
+        getButtonElevationMap: () => getTextButtonElevationMap(theme),
       ),
       child: BluePrintCoreButton(
         label: label,

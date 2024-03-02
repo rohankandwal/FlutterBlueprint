@@ -19,9 +19,7 @@ Map<BluePrintMaterialState, BluePrintMaterialStateColor>
             foregroundColor: theme.colors.brand.primary,
           ),
           BluePrintMaterialState.hovered: BluePrintMaterialStateColor(
-            backgroundColor: theme.colors.brand.primary.withOpacity(
-              theme.opacities.opacity10,
-            ),
+            backgroundColor: theme.colors.interaction.focused,
             borderColor: theme.colors.brand.outline,
             foregroundColor: theme.colors.brand.primary,
           ),
@@ -35,9 +33,7 @@ Map<BluePrintMaterialState, BluePrintMaterialStateColor>
             ),
           ),
           BluePrintMaterialState.focused: BluePrintMaterialStateColor(
-            backgroundColor: theme.colors.brand.primary.withOpacity(
-              theme.opacities.opacity10,
-            ),
+            backgroundColor: theme.colors.interaction.focused,
             borderColor: theme.colors.brand.primary,
             foregroundColor: theme.colors.brand.primary,
           ),

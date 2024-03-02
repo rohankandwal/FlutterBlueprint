@@ -5,12 +5,16 @@ class ColorInteraction {
   final Color hover;
   final Color pressed;
   final Color splash;
+  final Color focused;
+  final Color disabledColor;
 
   ColorInteraction({
     required this.main,
     required this.hover,
     required this.pressed,
     required this.splash,
+    required this.focused,
+    required this.disabledColor,
   });
 
   ColorInteraction lerp(ColorInteraction? other, double t) {
@@ -19,6 +23,8 @@ class ColorInteraction {
       hover: Color.lerp(hover, other?.hover, t)!,
       pressed: Color.lerp(pressed, other?.pressed, t)!,
       splash: Color.lerp(splash, other?.splash, t)!,
+      focused: Color.lerp(focused, other?.focused, t)!,
+      disabledColor: Color.lerp(disabledColor, other?.disabledColor, t)!,
     );
   }
 
@@ -27,5 +33,7 @@ class ColorInteraction {
         hover,
         pressed,
         splash,
+        focused,
+        disabledColor,
       ];
 }
