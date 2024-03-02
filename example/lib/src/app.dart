@@ -30,15 +30,18 @@ class FlutterBluePrintExample extends StatelessWidget {
       ),
       child: Consumer<ThemeNotifier>(
         builder: (context, value, child) {
+          final extension =
+              FlutterBluePrintThemeExtension.initWithBrandAndTextDirection(
+            branding: _getProjectBranding(value),
+            textDirection: TextDirection.ltr,
+          );
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: "Blueprint Design System",
             theme: ThemeData(
+              scaffoldBackgroundColor: extension.colors.brand.surface,
               extensions: [
-                FlutterBluePrintThemeExtension.initWithBrandAndTextDirection(
-                  branding: _getProjectBranding(value),
-                  textDirection: TextDirection.ltr,
-                ),
+                extension,
               ],
             ),
             home: HomeScreen(title: value.getSelectedTheme()),

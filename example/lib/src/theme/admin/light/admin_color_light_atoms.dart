@@ -143,4 +143,7 @@ class AdminColorLightAtoms extends ColorAtoms {
   /// Represents the background color of major UI elements like cards.
   /// Applied to surfaces such as cards, dialogs, and other container-like components.
   Color get surface => const Color(0xFFE8E8EA);
+
+  @override
+  Brightness get brightness => Brightness.light;
 }
