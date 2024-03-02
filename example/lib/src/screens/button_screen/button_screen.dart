@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
+import 'package:flutter_blueprint_example/src/screens/button_screen/elevated_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/button_screen/filled_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/button_screen/outlined_button_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/button_screen/text_button_screen.dart';
@@ -18,6 +19,10 @@ const _kDesignSystemCategories = [
   DesignSystemCategoryCard(
     title: 'Text Button',
     child: TextButtonScreen(),
+  ),
+  DesignSystemCategoryCard(
+    title: 'Elevated Button',
+    child: ElevatedButtonScreen(),
   ),
 ];
 

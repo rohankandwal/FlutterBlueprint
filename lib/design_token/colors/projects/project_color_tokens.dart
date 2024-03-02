@@ -24,7 +24,7 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
     ),
     interaction: ColorInteraction(
         hover: colorScheme.primary.withOpacity(0.8),
-        main: colorScheme.surface,
+        main: colorScheme.surfaceVariant,
         pressed: colorScheme.primary.withOpacity(0.6),
         splash: colorScheme.primary.withOpacity(0.2),
         focused: colorScheme.primary.withOpacity(0.12),
