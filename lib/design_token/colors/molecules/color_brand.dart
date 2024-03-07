@@ -4,6 +4,8 @@ class ColorBrand {
   final Color primary;
   final Color onPrimary;
   final Color secondary;
+  final Color secondaryContainer;
+  final Color onSecondaryContainer;
   final Color tertiary;
   final Color error;
   final Color onError;
@@ -18,6 +20,8 @@ class ColorBrand {
     required this.primary,
     required this.onPrimary,
     required this.secondary,
+    required this.secondaryContainer,
+    required this.onSecondaryContainer,
     required this.tertiary,
     required this.error,
     required this.onError,
@@ -34,6 +38,10 @@ class ColorBrand {
       primary: Color.lerp(primary, other?.primary, t)!,
       onPrimary: Color.lerp(onPrimary, other?.onPrimary, t)!,
       secondary: Color.lerp(secondary, other?.secondary, t)!,
+      secondaryContainer:
+          Color.lerp(secondaryContainer, other?.secondaryContainer, t)!,
+      onSecondaryContainer:
+          Color.lerp(onSecondaryContainer, other?.onSecondaryContainer, t)!,
       tertiary: Color.lerp(tertiary, other?.tertiary, t)!,
       error: Color.lerp(error, other?.error, t)!,
       onError: Color.lerp(onError, other?.onError, t)!,
@@ -52,6 +60,8 @@ class ColorBrand {
         primary,
         onPrimary,
         secondary,
+        secondaryContainer,
+        onSecondaryContainer,
         tertiary,
         error,
         onError,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class ColorAtoms {
   /// Brightness
-  Brightness get brightness => Brightness.light;
+  Brightness get brightness;
 
   /// The color displayed most frequently across your app.
   Color get primary;
