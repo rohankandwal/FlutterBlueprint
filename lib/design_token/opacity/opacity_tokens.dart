@@ -8,6 +8,8 @@ class OpacityTokens {
   final double opacity30 = 0.30;
   final double opacity40 = 0.40;
   final double opacity50 = 0.50;
+  final double opacity70 = 0.70;
+  final double opacity75 = 0.75;
   final double opacity80 = 0.80;
   final double opacity100 = 1;
 }
