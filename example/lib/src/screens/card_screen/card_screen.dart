@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
+import 'package:flutter_blueprint_example/src/screens/card_screen/elevated_card_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/card_screen/outline_card_screen.dart';
 import 'package:flutter_blueprint_example/src/screens/home_screen/widgets/design_system_category_card.dart';
 import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_scaffold.dart';
@@ -8,6 +9,10 @@ const _kDesignSystemCategories = [
   DesignSystemCategoryCard(
     title: 'Outline Card',
     child: OutlineCardScreen(),
+  ),
+  DesignSystemCategoryCard(
+    title: 'Elevated Card',
+    child: ElevatedCardScreen(),
   ),
 ];
 

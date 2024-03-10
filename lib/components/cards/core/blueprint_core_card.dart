@@ -18,7 +18,8 @@ class BluePrintCoreCard extends StatefulWidget {
 }
 
 class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
-  final ValueNotifier<Color?> _cardColorNotifier = ValueNotifier<Color?>(null);
+  final ValueNotifier<Color> _cardColorNotifier =
+      ValueNotifier<Color>(Colors.transparent);
 
   FocusMouseRegionState _currentState = FocusMouseRegionState.normal;
 
@@ -41,7 +42,8 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
             elevation: _getElevation(theme),
             shadowColor: _getShadowColor(theme),
             shape: _getBorder(theme),
-            color: value ?? theme.colors.brand.surface,
+            color: theme.colors.brand.surfaceContainer,
+            surfaceTintColor: value,
             child: widget.child,
           );
         },
@@ -56,6 +58,9 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
       }
       return theme.elevations.elevationLow.elevation;
     } else if (widget.cardType == BluePrintCardType.elevated) {
+      if (_currentState == FocusMouseRegionState.hovered) {
+        return theme.elevations.elevationHigh.elevation;
+      }
       return theme.elevations.elevationMedium.elevation;
     }
     return theme.elevations.elevationLow.elevation;
