@@ -134,4 +134,10 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
         return theme.colors.brand.surfaceContainer;
     }
   }
+
+  @override
+  void dispose() {
+    _cardColorNotifier.dispose();
+    super.dispose();
+  }
 }
