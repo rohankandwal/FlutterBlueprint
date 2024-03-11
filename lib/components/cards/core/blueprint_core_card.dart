@@ -24,6 +24,22 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
   FocusMouseRegionState _currentState = FocusMouseRegionState.normal;
 
   @override
+  void initState() {
+    setInitialColor();
+    super.initState();
+  }
+
+  void setInitialColor() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      final theme = context.theme;
+      _cardColorNotifier.value = _getCardColor(
+        FocusMouseRegionState.normal,
+        theme,
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = context.theme;
 
