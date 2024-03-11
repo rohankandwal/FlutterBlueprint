@@ -63,7 +63,8 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
       }
       return theme.elevations.elevationMedium.elevation;
     } else if (widget.cardType == BluePrintCardType.filled) {
-      if (_currentState == FocusMouseRegionState.normal) {
+      if (_currentState == FocusMouseRegionState.normal ||
+          _currentState == FocusMouseRegionState.pressed) {
         return theme.elevations.elevationLow.elevation;
       }
       return theme.elevations.elevationMedium.elevation;
@@ -106,13 +107,13 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
     switch (state) {
       case FocusMouseRegionState.pressed:
         return theme.colors.brand.surfaceContainer
-            .withOpacity(theme.opacities.opacity70);
+            .withOpacity(theme.opacities.opacity10);
       case FocusMouseRegionState.hovered:
         return theme.colors.brand.surfaceContainer
-            .withOpacity(theme.opacities.opacity80);
+            .withOpacity(theme.opacities.opacity20);
       case FocusMouseRegionState.focused:
         return theme.colors.brand.surfaceContainer
-            .withOpacity(theme.opacities.opacity70);
+            .withOpacity(theme.opacities.opacity10);
       case FocusMouseRegionState.normal:
         return theme.colors.brand.surfaceContainer;
     }
