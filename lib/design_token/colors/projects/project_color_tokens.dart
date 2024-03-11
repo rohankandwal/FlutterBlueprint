@@ -22,7 +22,11 @@ ColorTokens initializedWithBrand(ProjectBranding projects) {
       cardBackgroundColor: colorScheme.surface,
       onSurface: colorScheme.onSurface,
       surfaceContainer: colorScheme.surfaceVariant,
+      surfaceTint: colorScheme.surfaceTint,
       outline: colorScheme.outline,
+      shadow: projects.brandColors.brightness == Brightness.light
+          ? Colors.black
+          : Colors.white,
     ),
     interaction: ColorInteraction(
         hover: colorScheme.primary.withOpacity(0.8),

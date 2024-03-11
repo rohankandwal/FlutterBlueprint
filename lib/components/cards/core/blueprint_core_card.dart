@@ -62,14 +62,16 @@ class _BluePrintCoreCardState extends State<BluePrintCoreCard> {
         return theme.elevations.elevationHigh.elevation;
       }
       return theme.elevations.elevationMedium.elevation;
+    } else if (widget.cardType == BluePrintCardType.filled) {
+      if (_currentState == FocusMouseRegionState.normal) {
+        return theme.elevations.elevationLow.elevation;
+      }
+      return theme.elevations.elevationMedium.elevation;
     }
     return theme.elevations.elevationLow.elevation;
   }
 
   Color? _getShadowColor(final FlutterBluePrintThemeExtension theme) {
-    if (widget.cardType != BluePrintCardType.elevated) {
-      return null;
-    }
     return theme.elevations.elevationMedium.color;
   }
 

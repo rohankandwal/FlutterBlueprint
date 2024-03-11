@@ -12,9 +12,11 @@ class ColorBrand {
   final Color surface;
   final Color onSurface;
   final Color surfaceContainer;
+  final Color surfaceTint;
   final Color background;
   final Color cardBackgroundColor;
   final Color outline;
+  final Color shadow;
 
   ColorBrand({
     required this.primary,
@@ -31,6 +33,8 @@ class ColorBrand {
     required this.background,
     required this.onSurface,
     required this.surfaceContainer,
+    required this.surfaceTint,
+    required this.shadow,
   });
 
   ColorBrand lerp(ColorBrand? other, double t) {
@@ -53,6 +57,8 @@ class ColorBrand {
       onSurface: Color.lerp(onSurface, other?.onSurface, t)!,
       surfaceContainer:
           Color.lerp(surfaceContainer, other?.surfaceContainer, t)!,
+      surfaceTint: Color.lerp(surfaceTint, other?.surfaceTint, t)!,
+      shadow: Color.lerp(shadow, other?.shadow, t)!,
     );
   }
 
@@ -71,5 +77,7 @@ class ColorBrand {
         background,
         onSurface,
         surfaceContainer,
+        surfaceTint,
+        shadow,
       ];
 }
