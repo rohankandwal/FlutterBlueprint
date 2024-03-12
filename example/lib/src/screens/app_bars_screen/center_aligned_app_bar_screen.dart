@@ -5,7 +5,7 @@ import 'package:flutter_blueprint_example/src/utility_widgets/scaffold/custom_sc
 import 'package:flutter_blueprint_example/src/utility_widgets/text/label_text.dart';
 
 class CenterAlignedAppBarScreen extends StatelessWidget {
-  const CenterAlignedAppBarScreen({Key? key}) : super(key: key);
+  const CenterAlignedAppBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blueprint/components/dividers/types/blueprint_divider_orientation.dart';
 import 'package:flutter_blueprint/components/dividers/types/blueprint_divider_size.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/components/app_bars/common/blueprint_app_bar_utility.dart';
-import 'package:flutter_blueprint/components/theme_notifier.dart';
 import 'package:flutter_blueprint/flutter_blueprint.dart';
 import 'package:provider/provider.dart';
 
