@@ -36,7 +36,7 @@ class BadgeScreen extends StatelessWidget {
                     ),
                     const Align(
                       alignment: Alignment.topRight,
-                      child: const BluePrintBadge(),
+                      child: BluePrintBadge(),
                     ),
                   ],
                 ),
@@ -59,7 +59,7 @@ class BadgeScreen extends StatelessWidget {
                     ),
                     const Align(
                       alignment: Alignment.topRight,
-                      child: const BluePrintBadge(badgeCount: 0),
+                      child: BluePrintBadge(badgeCount: 0),
                     ),
                   ],
                 ),

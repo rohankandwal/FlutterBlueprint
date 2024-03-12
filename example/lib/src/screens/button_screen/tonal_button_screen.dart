@@ -7,8 +7,8 @@ class TonalButtonScreen extends StatelessWidget {
   const TonalButtonScreen({super.key});
 
   @override
-  Widget build(BuildContext conTonal) {
-    final theme = conTonal.theme;
+  Widget build(BuildContext context) {
+    final theme = context.theme;
 
     return CustomScaffold(
       title: "Tonal Button",
