@@ -1,0 +1,4 @@
+enum BluePrintDividerOrientation {
+  horizontal,
+  vertical,
+}

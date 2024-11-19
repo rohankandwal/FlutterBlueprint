@@ -12,7 +12,8 @@ class ElevationTokens {
         blurRadius: 4,
         spreadRadius: 0,
         opacity: _opacityTokens.opacity30,
-        color: _colorTokens.neutral.neutral50,
+        color: _colorTokens.brand.shadow,
+        elevation: 0,
       );
 
   ElevationToken get elevationMedium => ElevationToken(
@@ -21,7 +22,8 @@ class ElevationTokens {
         blurRadius: 16,
         spreadRadius: 0,
         opacity: _opacityTokens.opacity24,
-        color: _colorTokens.neutral.neutral50,
+        color: _colorTokens.brand.shadow,
+        elevation: 4,
       );
 
   ElevationToken get elevationHigh => ElevationToken(
@@ -30,7 +32,8 @@ class ElevationTokens {
         blurRadius: 50,
         spreadRadius: 0,
         opacity: _opacityTokens.opacity24,
-        color: _colorTokens.neutral.neutral50,
+        color: _colorTokens.brand.shadow,
+        elevation: 8,
       );
 
   ElevationTokens({

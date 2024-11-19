@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/design_token/typography/atoms/available_fonts.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/font_family_tokens.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/font_size_tokens.dart';
 import 'package:flutter_blueprint/design_token/typography/atoms/font_weight_tokens.dart';
@@ -6,11 +7,10 @@ import 'package:flutter_blueprint/design_token/typography/atoms/line_height_toke
 import 'package:flutter_blueprint/util/flutter_blueprint_constants.dart';
 
 class TextStyleTokens {
-  TextStyleTokens._();
-
   late final TextDirection _textDirection;
-
-  late final String _fontFamily;
+  late final AvailableFonts? _ltr;
+  late final AvailableFonts? _rtl;
+  late final TextStyle _textStyle;
 
   late final TextStyle title1_700;
   late final TextStyle title2_700;
@@ -25,15 +25,26 @@ class TextStyleTokens {
   late final TextStyle buttonLarge_600;
   late final TextStyle buttonMedium_700;
   late final TextStyle buttonSmall_700;
+  late final Color _textColor;
 
   TextStyleTokens({
-    required TextDirection textDirection,
-  }) : _textDirection = textDirection {
-    _fontFamily = FontFamilyTokens.getFontFamily(textDirection: textDirection);
-    _initDefaultTextStyles(fontFamily: _fontFamily);
+    required final TextDirection textDirection,
+    required final AvailableFonts? ltr,
+    required final AvailableFonts? rtl,
+    required final Color textColor,
+  })  : _textDirection = textDirection,
+        _ltr = ltr,
+        _rtl = rtl,
+        _textColor = textColor {
+    _textStyle = FontFamilyTokens.getFontFamily(
+      textDirection: textDirection,
+      ltr: ltr,
+      rtl: rtl,
+    );
+    _initDefaultTextStyles();
   }
 
-  void _initDefaultTextStyles({required String fontFamily}) {
+  void _initDefaultTextStyles() {
     title1_700 = _getTextStyle(
       debugLabel: 'title1_700',
       fontSize: FontSizeTokens.fontSize60,
@@ -112,7 +123,6 @@ class TextStyleTokens {
       fontWeight: FontWeightTokens.fontWeight700,
       lineHeight: LineHeightTokens.lineHeight16,
     );
-
   }
 
   TextStyle _getTextStyle({
@@ -121,10 +131,10 @@ class TextStyleTokens {
     required FontWeight fontWeight,
     required double lineHeight,
   }) =>
-      TextStyle(
+      _textStyle.copyWith(
         debugLabel: debugLabel,
+        color: _textColor,
         package: FlutterBlueprintConstants.packageName,
-        fontFamily: _fontFamily,
         fontWeight: fontWeight,
         fontSize: fontSize,
         leadingDistribution: TextLeadingDistribution.even,
@@ -134,6 +144,16 @@ class TextStyleTokens {
         ),
       );
 
-  TextStyleTokens copyWith({TextDirection? textDirection}) =>
-      TextStyleTokens(textDirection: textDirection ?? _textDirection);
+  TextStyleTokens copyWith({
+    final TextDirection? textDirection,
+    final AvailableFonts? ltr,
+    final AvailableFonts? rtl,
+    final Color? textColor,
+  }) =>
+      TextStyleTokens(
+        textDirection: textDirection ?? _textDirection,
+        rtl: rtl ?? _rtl,
+        ltr: ltr ?? _ltr,
+        textColor: textColor ?? _textColor,
+      );
 }
