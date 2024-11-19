@@ -46,7 +46,7 @@ class BluePrintBottomSheetEndAlignedButtons extends StatelessWidget {
           FilledButton(
             onPressed: primaryActionPressed,
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.resolveWith(
+              backgroundColor: WidgetStateProperty.resolveWith(
                 (states) => theme.colors.brand.primary,
               ),
             ),

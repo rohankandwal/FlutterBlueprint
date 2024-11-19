@@ -23,7 +23,7 @@ class BluePrintCoreButtonStyle extends ButtonStyle {
     final BluePrintCoreButtonRippleType splashRipple =
         BluePrintCoreButtonRippleType.ripple,
   }) : super(
-          padding: MaterialStatePropertyAll(
+          padding: WidgetStatePropertyAll(
             EdgeInsets.only(
               left: hasLeftIcon
                   ? theme.spacings.spacing16
@@ -35,7 +35,7 @@ class BluePrintCoreButtonStyle extends ButtonStyle {
               bottom: theme.spacings.spacing10,
             ),
           ),
-          textStyle: MaterialStatePropertyAll(
+          textStyle: WidgetStatePropertyAll(
             theme.textStyle.buttonSmall_700.copyWith(
               height: LineHeightTokens.calculateLineHeight(
                 fontSize: FontSizeTokens.fontSize14,
@@ -43,15 +43,15 @@ class BluePrintCoreButtonStyle extends ButtonStyle {
               ),
             ),
           ),
-          elevation: MaterialStateProperty.resolveWith(
+          elevation: WidgetStateProperty.resolveWith(
             (states) => resolveElevationMaterialState(
                 materialStateColorMap: getButtonElevationMap(), states: states),
           ),
           splashFactory: splashRipple.splashFactory,
-          shadowColor: MaterialStatePropertyAll(
+          shadowColor: WidgetStatePropertyAll(
             theme.elevations.elevationMedium.color,
           ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
                 theme.borderRadius.borderRadiusExtraLarge,

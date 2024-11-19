@@ -46,7 +46,7 @@ class BluePrintBottomSheetExpandedButtons extends StatelessWidget {
             child: FilledButton(
               onPressed: primaryActionPressed,
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.resolveWith(
+                backgroundColor: WidgetStateProperty.resolveWith(
                   (states) => theme.colors.brand.primary,
                 ),
               ),

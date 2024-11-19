@@ -30,20 +30,20 @@ class BluePrintOutlinedButton extends StatelessWidget {
         theme: theme,
         hasLeftIcon: leftIcon != null,
         hasRightIcon: rightIcon != null,
-        backgroundColor: MaterialStateProperty.resolveWith(
+        backgroundColor: WidgetStateProperty.resolveWith(
           (states) => resolveMaterialState(
             states: states,
             materialStateColorMap: materialStateMap,
           ).backgroundColor,
         ),
-        foregroundColor: MaterialStateProperty.resolveWith(
+        foregroundColor: WidgetStateProperty.resolveWith(
           (states) => resolveMaterialState(
             states: states,
             materialStateColorMap: materialStateMap,
           ).foregroundColor,
         ),
         getButtonElevationMap: () => getOutlinedButtonElevationMap(theme),
-        side: MaterialStateProperty.resolveWith(
+        side: WidgetStateProperty.resolveWith(
           (states) => BorderSide(
             color: resolveMaterialState(
                     states: states, materialStateColorMap: materialStateMap)

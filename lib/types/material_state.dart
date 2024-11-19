@@ -22,17 +22,17 @@ class BluePrintMaterialStateColor {
 }
 
 BluePrintMaterialStateColor resolveMaterialState({
-  required Set<MaterialState> states,
+  required Set<WidgetState> states,
   required Map<BluePrintMaterialState, BluePrintMaterialStateColor>
       materialStateColorMap,
 }) {
-  if (states.contains(MaterialState.disabled)) {
+  if (states.contains(WidgetState.disabled)) {
     return materialStateColorMap[BluePrintMaterialState.disabled]!;
-  } else if (states.contains(MaterialState.pressed)) {
+  } else if (states.contains(WidgetState.pressed)) {
     return materialStateColorMap[BluePrintMaterialState.pressed]!;
-  } else if (states.contains(MaterialState.hovered)) {
+  } else if (states.contains(WidgetState.hovered)) {
     return materialStateColorMap[BluePrintMaterialState.hovered]!;
-  } else if (states.contains(MaterialState.focused)) {
+  } else if (states.contains(WidgetState.focused)) {
     return materialStateColorMap[BluePrintMaterialState.focused]!;
   }
   return materialStateColorMap[BluePrintMaterialState.main]!;
@@ -63,16 +63,16 @@ Map<BluePrintMaterialState, BluePrintMaterialStateColor>
         };
 
 double resolveElevationMaterialState({
-  required Set<MaterialState> states,
+  required Set<WidgetState> states,
   required Map<BluePrintMaterialState, double> materialStateColorMap,
 }) {
-  if (states.contains(MaterialState.disabled)) {
+  if (states.contains(WidgetState.disabled)) {
     return materialStateColorMap[BluePrintMaterialState.disabled]!;
-  } else if (states.contains(MaterialState.pressed)) {
+  } else if (states.contains(WidgetState.pressed)) {
     return materialStateColorMap[BluePrintMaterialState.pressed]!;
-  } else if (states.contains(MaterialState.hovered)) {
+  } else if (states.contains(WidgetState.hovered)) {
     return materialStateColorMap[BluePrintMaterialState.hovered]!;
-  } else if (states.contains(MaterialState.focused)) {
+  } else if (states.contains(WidgetState.focused)) {
     return materialStateColorMap[BluePrintMaterialState.focused]!;
   }
   return materialStateColorMap[BluePrintMaterialState.main]!;
