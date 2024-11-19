@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter_blueprint/design_token/colors/colors.dart';
-import 'package:flutter_blueprint_example/src/theme/Sunset/dark/Sunset_color_dark_atoms.dart';
+import 'package:flutter_blueprint_example/src/theme/sunset/dark/sunset_color_dark_atoms.dart';
 
 class SunsetColorDarkMessaging extends ColorMessaging {
   @override

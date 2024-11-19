@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter_blueprint/design_token/colors/colors.dart';
-import 'package:flutter_blueprint_example/src/theme/Sunset/Light/Sunset_color_Light_atoms.dart';
+import 'package:flutter_blueprint_example/src/theme/sunset/light/sunset_color_light_atoms.dart';
 
 class SunsetColorLightNeutral extends ColorNeutral {
   @override
