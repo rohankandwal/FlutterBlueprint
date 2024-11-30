@@ -8,23 +8,11 @@ class SunsetColorDarkMessaging extends ColorMessaging {
   Color get error => SunsetColorDarkAtoms.red100;
 
   @override
-  Color get errorLight => SunsetColorDarkAtoms.red400;
-
-  @override
   Color get information => SunsetColorDarkAtoms.blue100;
-
-  @override
-  Color get informationLight => SunsetColorDarkAtoms.blue200;
 
   @override
   Color get success => SunsetColorDarkAtoms.green100;
 
   @override
-  Color get successLight => SunsetColorDarkAtoms.green800;
-
-  @override
   Color get warning => SunsetColorDarkAtoms.orange100;
-
-  @override
-  Color get warningLight => SunsetColorDarkAtoms.orange300;
 }

@@ -57,9 +57,9 @@ class FlutterBluePrintExample extends StatelessWidget {
     } else if (theme.getSelectedTheme() == themes[1]) {
       return AdminProjectDarkBranding();
     } else if (theme.getSelectedTheme() == themes[2]) {
-      return SunsetProjectDarkBranding();
-    } else if (theme.getSelectedTheme() == themes[3]) {
       return SunsetProjectLightBranding();
+    } else if (theme.getSelectedTheme() == themes[3]) {
+      return SunsetProjectDarkBranding();
     } else if (theme.getSelectedTheme() == themes[4]) {
       return MaterialProjectLightBranding();
     } else {
