@@ -5,26 +5,14 @@ import 'package:flutter_blueprint_example/src/theme/sunset/light/sunset_color_li
 
 class SunsetColorLightMessaging extends ColorMessaging {
   @override
-  Color get error => SunsetColorLightAtoms.red100;
+  Color get error => SunsetColorLightAtoms.red400;
 
   @override
-  Color get errorLight => SunsetColorLightAtoms.red400;
+  Color get information => SunsetColorLightAtoms.blue200;
 
   @override
-  Color get information => SunsetColorLightAtoms.blue100;
+  Color get success => SunsetColorLightAtoms.green800;
 
   @override
-  Color get informationLight => SunsetColorLightAtoms.blue200;
-
-  @override
-  Color get success => SunsetColorLightAtoms.green100;
-
-  @override
-  Color get successLight => SunsetColorLightAtoms.green800;
-
-  @override
-  Color get warning => SunsetColorLightAtoms.orange100;
-
-  @override
-  Color get warningLight => SunsetColorLightAtoms.orange300;
+  Color get warning => SunsetColorLightAtoms.orange300;
 }
